@@ -12,13 +12,23 @@ export default function App() {
   const [message, setMessage] = useState("");
 
   const login = async () => {
+    if (!username || !password) {
+      alert("Username and password are required");
+    return;
+  }
     const res = await axios.post(`${API}/auth/login`, { username, password });
     setToken(res.data.token);
     setBalance(res.data.user.balance);
+
   };
 
   const register = async () => {
+    if (!username || !password) {
+        alert("Username and password are required");
+      return;
+    }
     await axios.post(`${API}/auth/register`, { username, password });
+
     await login();
   };
 

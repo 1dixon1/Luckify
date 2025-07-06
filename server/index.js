@@ -2,8 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import authRoutes from "./routes/auth.js";
-import gameRoutes from "./routes/game.js";
+import authRoutes from "./src/routes/auth.js";
+import gameRoutes from "./src/routes/game.js";
 
 dotenv.config();
 const app = express();
